@@ -47,7 +47,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href={`/${currentLocale}`} className="text-2xl font-bold tracking-tighter text-foreground">
-          NSM<span className="text-primary-500">HR</span>
+          <img src="../LOGO/NSM-TECH-LOGO.png" alt="" className="w-full h-13 object-contain"/>
         </Link>
 
         {/* Desktop Links */}
