@@ -1,0 +1,168 @@
+{
+  "Navbar": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "howItWorks": "How it Works",
+    "faq": "FAQ",
+    "getStarted": "Get Started"
+  },
+  "Hero": {
+    "badge": "🚀 The Future of HR is Here",
+    "titleStart": "Elevate Your",
+    "titleHighlight": "Workforce",
+    "morph1": "Future",
+    "morph2": "Success",
+    "morph3": "Growth",
+    "description": "Streamline payroll, recruitment, and employee engagement with our AI-powered platform designed for the next generation of teams.",
+    "startTrial": "Start Free Trial",
+    "watchDemo": "Watch Demo"
+  },
+  "Features": {
+    "badge": "Why Choose Us",
+    "title": "Everything you need to manage your team",
+    "description": "Our platform brings all your HR needs into one cohesive ecosystem, simplifying complex processes so you can focus on people.",
+    "smartRecruitment": "Smart Recruitment",
+    "smartRecruitmentDesc": "Automate candidate sourcing and screening with our AI-driven recruitment engine.",
+    "realTimeAnalytics": "Real-time Analytics",
+    "realTimeAnalyticsDesc": "Gain actionable insights into workforce performance with interactive dashboards.",
+    "securePayroll": "Secure Payroll",
+    "securePayrollDesc": "Global payroll processing with enterprise-grade security and compliance.",
+    "instantOnboarding": "Instant Onboarding",
+    "instantOnboardingDesc": "Get new hires up to speed in minutes with automated workflows and digital signing.",
+    "remoteFirst": "Remote First",
+    "remoteFirstDesc": "Designed for distributed teams with time-zone awareness and async tools.",
+    "employeeWellbeing": "Employee Well-being",
+    "employeeWellbeingDesc": "Track engagement and sentiment to build a happier, more productive workplace."
+  },
+  "Pricing": {
+    "badge": "Pricing Plans",
+    "title": "Choose the perfect plan for your team",
+    "description": "Flexible pricing options designed to scale with your business growth.",
+    "starter": "Starter",
+    "starterDesc": "Perfect for small teams getting started.",
+    "professional": "Professional",
+    "professionalDesc": "Ideal for growing companies with advanced needs.",
+    "enterprise": "Enterprise",
+    "enterpriseDesc": "For large organizations requiring scale.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save20": "Save 20%",
+    "mostPopular": "Most Popular",
+    "choose": "Choose",
+    "month": "month",
+    "year": "year",
+    "features": {
+      "starter": [
+        "Up to 10 employees",
+        "Basic Recruitment",
+        "Core HRIS",
+        "Email Support"
+      ],
+      "professional": [
+        "Up to 50 employees",
+        "Advanced Recruitment",
+        "Performance Management",
+        "Payroll Integration",
+        "Priority Support"
+      ],
+      "enterprise": [
+        "Unlimited employees",
+        "Custom Workflows",
+        "Dedicated Success Manager",
+        "API Access",
+        "SSO & Security"
+      ]
+    }
+  },
+  "Testimonials": {
+    "title": "Loved by modern teams",
+    "reviews": [
+      {
+        "content": "HR GenZ transformed how we handle recruitment. The interface is intuitive, and our team actually enjoys using it.",
+        "author": "Sarah J.",
+        "role": "Head of People, TechFlow"
+      },
+      {
+        "content": "Finally, an HR platform that doesn't feel like it was built in the 90s. The mobile experience is top-notch.",
+        "author": "Michael C.",
+        "role": "CEO, StartUp Inc."
+      },
+      {
+        "content": "The analytics dashboard gave us insights we never had before. Highly recommended for data-driven teams.",
+        "author": "Emily R.",
+        "role": "HR Director, GlobalCorp"
+      }
+    ]
+  },
+  "MobileApp": {
+    "badge": "Mobile Experience",
+    "title": "HR in your pocket",
+    "description": "Manage your team anytime, anywhere. Our mobile app puts the power of HR GenZ right in the palm of your hand.",
+    "feature1": "Approve leave on the go",
+    "feature2": "View payroll history",
+    "feature3": "Real-time notifications"
+  },
+  "HowItWorks": {
+    "title": "How it works",
+    "subtitle": "Get started in minutes",
+    "step1": "Quick Onboarding",
+    "step1Desc": "Sign up and set up your company profile in less than 5 minutes.",
+    "step2": "Manage Your Team",
+    "step2Desc": "Add employees, set roles, and manage payroll with a few clicks.",
+    "step3": "Automate & Grow",
+    "step3Desc": "Use AI insights to optimize performance and automate repetitive tasks."
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "q1": "Is my data safe with NSM SMART HR?",
+    "a1": "Yes, we use enterprise-grade encryption and secure cloud storage to protect all your sensitive information.",
+    "q2": "Can I try it for free?",
+    "a2": "Absolutely! We offer a 14-day free trial on our Starter and Professional plans.",
+    "q3": "Do you support Khmer language?",
+    "a3": "Yes, our platform is fully localized in both English and Khmer to support local and international teams.",
+    "q4": "Is there a mobile app?",
+    "a4": "Yes, we have dedicated apps for both iOS and Android to manage HR on the go."
+  },
+  "RegistrationModal": {
+    "title": "Experience the Future of HR",
+    "subtitle": "Fill out the form below to get started or request a demo. Our team will contact you shortly.",
+    "name": "Full Name",
+    "email": "Work Email",
+    "phone": "Phone Number",
+    "company": "Company Name",
+    "submit": "Request Demo / Get Started",
+    "submitting": "Processing...",
+    "successTitle": "Thank You!",
+    "successMessage": "Your request has been received. One of our HR experts will be in touch within 24 hours.",
+    "close": "Close",
+    "validation": {
+      "nameRequired": "Please enter your full name",
+      "emailRequired": "Work email is required",
+      "emailInvalid": "Please enter a valid work email",
+      "phoneRequired": "Phone number is required",
+      "companyRequired": "Company name is required"
+    }
+  },
+  "TrustedBy": {
+    "title": "Trusted by innovative companies worldwide"
+  },
+  "Contact": {
+    "badge": "Get in Touch",
+    "title": "Let's start a conversation",
+    "description": "Have questions? Our team is here to help you scale your workforce.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "email": "Email Us",
+      "phone": "Call Us",
+      "address": "Visit Us"
+    }
+  }
+}
