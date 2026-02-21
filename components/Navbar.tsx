@@ -47,7 +47,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href={`/${currentLocale}`} className="text-2xl font-bold tracking-tighter text-foreground">
-          <img src="../LOGO/NSM-TECH-LOGO.png" alt="" className="w-full h-13 object-contain"/>
+          <img src="/LOGO/NSM-TECH-LOGO.png" alt="NSM Tech Logo" className="h-9 w-auto object-contain" style={{ mixBlendMode: 'multiply' }}/>
         </Link>
 
         {/* Desktop Links */}

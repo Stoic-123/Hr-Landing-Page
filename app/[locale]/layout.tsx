@@ -23,6 +23,10 @@ const kantumruyPro = Kantumruy_Pro({
 export const metadata: Metadata = {
   title: "NSM SMART HR SYSTEM",
   description: "Modern HR management system for the next generation.",
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/LOGO/NSM-TECH-LOGO.png",
+  },
 };
 
 import Navbar from "@/components/Navbar";
