@@ -113,7 +113,9 @@ export default function MobileApp() {
             <div className="mt-12 flex flex-wrap gap-4">
               {/* Apple App Store Button */}
               <a
-                href="#"
+                href="https://apps.apple.com/kz/app/nsm-hr/id6757325691"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center bg-black text-white px-4 py-2 rounded-xl transition-all hover:bg-primary-500 shadow-lg shadow-primary-600/20 group w-[180px] h-[58px]"
               >
                 <div className="mr-3 transform  group-hover:scale-110 transition-transform flex-shrink-0">

@@ -85,8 +85,9 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-foreground">{t("info.email")}</h3>
-                <p className="text-zinc-600">contact@nsm-smart-hr.com</p>
-                <p className="text-zinc-600">support@nsm-smart-hr.com</p>
+                <p className="text-zinc-600">
+                  <a href="mailto:info@nsmtech.com.kh" className="hover:text-primary-600 transition-colors">info@nsmtech.com.kh</a>
+                </p>
               </div>
             </div>
 
@@ -96,8 +97,9 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-foreground">{t("info.phone")}</h3>
-                <p className="text-zinc-600">+855 12 345 678</p>
-                <p className="text-zinc-600">+855 96 789 012</p>
+                <p className="text-zinc-600">
+                  <a href="tel:+85595333133" className="hover:text-primary-600 transition-colors">+855 95 333 133</a>
+                </p>
               </div>
             </div>
 
@@ -107,8 +109,9 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-foreground">{t("info.address")}</h3>
-                <p className="text-zinc-600">Phnom Penh, Cambodia</p>
-                <p className="text-zinc-600">123 Business Avenue, Suite 456</p>
+                <p className="text-zinc-600">
+                  <a href="https://maps.app.goo.gl/NhR5uc6RPu5UXTR86" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">11 St 2, Phnom Penh, Cambodia</a>
+                </p>
               </div>
             </div>
           </div>
@@ -120,7 +123,7 @@ export default function Contact() {
                 <label className="text-sm font-medium text-zinc-700 ml-1">{t("form.name")}</label>
                 <input
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Full Name"
                   className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all placeholder:text-zinc-400"
                 />
               </div>
@@ -128,7 +131,7 @@ export default function Contact() {
                 <label className="text-sm font-medium text-zinc-700 ml-1">{t("form.email")}</label>
                 <input
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder="email@example.com"
                   className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all placeholder:text-zinc-400"
                 />
               </div>
@@ -142,7 +145,7 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 rounded-xl shadow-lg shadow-primary-500/20 transition-all active:scale-[0.98] flex items-center justify-center space-x-2"
+                className="w-full cursor-pointer bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 rounded-xl shadow-lg shadow-primary-500/20 transition-all active:scale-[0.98] flex items-center justify-center space-x-2"
               >
                 <span>{t("form.send")}</span>
                 <Send className="w-4 h-4" />
