@@ -99,10 +99,10 @@
   "MobileApp": {
     "badge": "Mobile Experience",
     "title": "HR in your pocket",
-    "description": "Manage your team anytime, anywhere. Our mobile app puts the power of HR GenZ right in the palm of your hand.",
-    "feature1": "Approve leave on the go",
-    "feature2": "View payroll history",
-    "feature3": "Real-time notifications"
+    "description": "Manage your team anytime, anywhere. Our mobile app puts the power of NSM SMART HR right in the palm of your hand.",
+    "feature1": "Personal Information Management",
+    "feature2": "Employee Attendance Monitoring and Tracking",
+    "feature3": "Leave and Overtime Request Management"
   },
   "HowItWorks": {
     "title": "How it works",

@@ -34,6 +34,14 @@ export default function Navbar() {
     { name: t('contact'), id: 'contact' }
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <nav
       className={`fixed z-50 transition-all duration-500 ease-in-out left-1/2 -translate-x-1/2 ${
@@ -56,6 +64,7 @@ export default function Navbar() {
             <Link
               key={item.id}
               href={`#${item.id}`}
+              onClick={(e) => handleNavClick(e, item.id)}
               className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary-500"
             >
               {item.name}
@@ -95,7 +104,7 @@ export default function Navbar() {
                 key={item.id}
                 href={`#${item.id}`}
                 className="text-base font-medium text-foreground/80 hover:text-primary-500"
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => { handleNavClick(e, item.id); setIsOpen(false); }}
               >
                 {item.name}
               </Link>

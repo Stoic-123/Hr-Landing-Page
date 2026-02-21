@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 export default function FAQ() {
   const t = useTranslations("FAQ");
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     { q: t("q1"), a: t("a1") },
