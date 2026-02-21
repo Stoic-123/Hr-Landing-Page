@@ -51,7 +51,7 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={containerRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center justify-center space-x-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200
+        className={`flex cursor-pointer items-center justify-center space-x-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200
           ${isOpen 
             ? "border-primary-500 bg-primary-50 text-primary-700 ring-2 ring-primary-100" 
             : "border-zinc-200 bg-white text-zinc-700 hover:border-primary-300 hover:bg-zinc-50"
@@ -82,10 +82,10 @@ export default function LanguageSwitcher() {
               {languages.map((lang) => {
                 const isActive = currentLocale === lang.code;
                 return (
-                  <button
+                  <button 
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className={`nav-lang-item group flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm font-medium transition-all
+                    className={`nav-lang-item group flex w-full cursor-pointer items-center justify-between rounded-xl px-3 py-2.5 text-sm font-medium transition-all
                       ${isActive 
                         ? "bg-primary-50 text-primary-700" 
                         : "text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900"

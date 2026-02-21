@@ -8,7 +8,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import { useModal } from "@/context/ModalContext";
-import { MorphingText } from "@/components/MorphingText";
 import { SpinningText } from "@/components/SpinningText";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -92,19 +91,9 @@ export default function Hero() {
           className="z-10 flex max-w-2xl flex-col items-start space-y-6 text-left md:w-1/2"
         >
           <div className="hero-text-anim">
-            <h1 className="text-4xl font-extrabold tracking-tight text-foreground  md:text-6xl lg:text-7xl leading-[1.2]">
+            <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-6xl lg:text-7xl leading-[1.2]">
               {t('titleStart')} <br />
-              <div className="h-[2.5em] md:h-[1.5em] relative mb-12 sm:mb-8">
-                <MorphingText 
-                  texts={[
-                    t('titleHighlight'),
-                    t('morph1'),
-                    t('morph2'),
-                    t('morph3')
-                  ]} 
-                  className="text-primary-500 absolute left-0 top-0 text-left mx-0 h-full w-full"
-                />
-              </div>
+              <span className="text-primary-500">{t('titleHighlight')}</span>
             </h1>
           </div>
           

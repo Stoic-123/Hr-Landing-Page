@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ParticleBackground from "@/components/ParticleBackground";
+import MeshBackground from "@/components/MeshBackground";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageTransition from "@/components/PageTransition";
 
@@ -59,7 +59,7 @@ export default async function RootLayout({
           >
             <ModalProvider>
               <SmoothScroll>
-                <ParticleBackground />
+                <MeshBackground />
                 <Navbar />
                 <PageTransition>
                   <main className="flex-grow relative z-10">{children}</main>

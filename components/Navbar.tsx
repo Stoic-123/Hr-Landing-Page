@@ -75,10 +75,10 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button & Language Switcher */}
-        <div className="flex items-center space-x-4 md:hidden">
+        <div className="flex  items-center space-x-4 md:hidden">
          <LanguageSwitcher />
           <button
-            className="text-foreground"
+            className="text-foreground cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X /> : <Menu />}

@@ -126,7 +126,7 @@ export default function RegistrationModal() {
                 ease: "easeIn"
               }
             }}
-            className="relative w-full max-w-lg overflow-hidden rounded-[2.5rem] bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)]"
+            className="relative w-full max-w-2xl overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)]"
           >
             {/* Inner Glow / Lighting Effect */}
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
@@ -134,12 +134,12 @@ export default function RegistrationModal() {
             {/* Close Button */}
             <button
               onClick={handleClose}
-              className="absolute cursor-pointer right-6 top-6 z-10 w-10 h-10 rounded-full flex items-center justify-center bg-zinc-900/5 hover:bg-zinc-900/10 text-zinc-600 transition-all active:scale-95"
+              className="absolute cursor-pointer right-4 top-4 sm:right-6 sm:top-6 z-10 w-10 h-10 rounded-full flex items-center justify-center bg-zinc-900/5 hover:bg-zinc-900/10 text-zinc-600 transition-all active:scale-95"
             >
               <X className="h-5 w-5" />
             </button>
 
-            <div className="p-8 sm:p-12">
+            <div className="p-6 sm:p-12">
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
                   <motion.div
@@ -150,7 +150,7 @@ export default function RegistrationModal() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="mb-8">
-                      <h2 className="text-3xl font-bold tracking-tight text-foreground mb-3 bg-gradient-to-br from-zinc-900 to-zinc-600 bg-clip-text">
+                      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3 bg-gradient-to-br from-zinc-900 to-zinc-600 bg-clip-text">
                         {t("title")}
                       </h2>
                       <p className="text-zinc-600 leading-relaxed font-medium">
@@ -169,7 +169,7 @@ export default function RegistrationModal() {
                           onChange={handleChange}
                           type="text"
                           className={cn(
-                            "w-full rounded-2xl border bg-white/40 px-5 py-4 outline-none focus:bg-white/80 focus:ring-4 transition-all duration-300 placeholder:text-zinc-400",
+                            "w-full rounded-xl sm:rounded-2xl border bg-white/40 px-5 py-4 outline-none focus:bg-white/80 focus:ring-4 transition-all duration-300 placeholder:text-zinc-400",
                             errors.name ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/10" : "border-white/50 focus:border-primary-500 focus:ring-primary-500/10"
                           )}
                           placeholder="Your full name"
@@ -189,7 +189,7 @@ export default function RegistrationModal() {
                             onChange={handleChange}
                             type="email"
                             className={cn(
-                              "w-full rounded-2xl border bg-white/40 px-5 py-4 outline-none focus:bg-white/80 focus:ring-4 transition-all duration-300 placeholder:text-zinc-400",
+                              "w-full rounded-xl sm:rounded-2xl border bg-white/40 px-5 py-4 outline-none focus:bg-white/80 focus:ring-4 transition-all duration-300 placeholder:text-zinc-400",
                               errors.email ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/10" : "border-white/50 focus:border-primary-500 focus:ring-primary-500/10"
                             )}
                             placeholder="work@company.com"
@@ -208,7 +208,7 @@ export default function RegistrationModal() {
                             onChange={handleChange}
                             type="tel"
                             className={cn(
-                              "w-full rounded-2xl border bg-white/40 px-5 py-4 outline-none focus:bg-white/80 focus:ring-4 transition-all duration-300 placeholder:text-zinc-400",
+                              "w-full rounded-xl sm:rounded-2xl border bg-white/40 px-5 py-4 outline-none focus:bg-white/80 focus:ring-4 transition-all duration-300 placeholder:text-zinc-400",
                               errors.phone ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/10" : "border-white/50 focus:border-primary-500 focus:ring-primary-500/10"
                             )}
                             placeholder="+000 000 000"
@@ -228,7 +228,7 @@ export default function RegistrationModal() {
                           onChange={handleChange}
                           type="text"
                           className={cn(
-                            "w-full rounded-2xl border bg-white/40 px-5 py-4 outline-none focus:bg-white/80 focus:ring-4 transition-all duration-300 placeholder:text-zinc-400",
+                            "w-full rounded-xl sm:rounded-2xl border bg-white/40 px-5 py-4 outline-none focus:bg-white/80 focus:ring-4 transition-all duration-300 placeholder:text-zinc-400",
                             errors.company ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/10" : "border-white/50 focus:border-primary-500 focus:ring-primary-500/10"
                           )}
                           placeholder="Company name"
@@ -242,7 +242,7 @@ export default function RegistrationModal() {
                         disabled={isLoading}
                         type="submit"
                         className={cn(
-                          "w-full rounded-2xl cursor-pointer bg-primary-600 py-5 text-sm font-bold text-white transition-all hover:bg-primary-500 hover:shadow-xl hover:shadow-primary-600/25 active:scale-[0.98] flex items-center justify-center space-x-2 relative overflow-hidden group/btn",
+                          "w-full rounded-xl sm:rounded-2xl cursor-pointer bg-primary-600 py-4 sm:py-5 text-sm font-bold text-white transition-all hover:bg-primary-500 hover:shadow-xl hover:shadow-primary-600/25 active:scale-[0.98] flex items-center justify-center space-x-2 relative overflow-hidden group/btn",
                           isLoading && "opacity-70 cursor-not-allowed"
                         )}
                       >
@@ -272,7 +272,7 @@ export default function RegistrationModal() {
                     </p>
                     <button
                       onClick={handleClose}
-                      className="w-full rounded-2xl bg-zinc-900 py-5 text-sm font-bold text-white hover:bg-zinc-800 transition-all active:scale-[0.98] shadow-xl shadow-zinc-900/10"
+                      className="w-full rounded-xl sm:rounded-2xl bg-zinc-900 py-4 sm:py-5 text-sm font-bold text-white hover:bg-zinc-800 transition-all active:scale-[0.98] shadow-xl shadow-zinc-900/10"
                     >
                       {t("close")}
                     </button>
