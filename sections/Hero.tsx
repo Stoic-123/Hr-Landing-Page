@@ -12,6 +12,7 @@ import { SpinningText } from "@/components/SpinningText";
 
 gsap.registerPlugin(ScrollTrigger);
 import { ArrowRight, ChevronDown, Play } from "lucide-react";
+import { HeroVideoDialog } from "@/components/magicui/HeroVideoDialog";
 
 export default function Hero() {
   const t = useTranslations('Hero');
@@ -103,21 +104,24 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="hero-text-anim flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+          <div className="hero-text-anim flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 items-center">
             <button
               onClick={openModal}
-              className="group flex cursor-pointer items-center justify-center space-x-2 rounded-full bg-primary-600 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-500/30"
+              className="group flex cursor-pointer items-center justify-center space-x-2 rounded-full bg-primary-600 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-500/30 h-[60px]"
             >
               <span>{t('startTrial')}</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </button>
-            <button 
-              onClick={openModal}
-              className="flex cursor-pointer items-center justify-center space-x-2 rounded-full border border-primary-600 bg-white px-8 py-4 text-base font-semibold text-primary-600 transition-colors hover:bg-primary-500/10"
+            
+            <HeroVideoDialog
+              animationStyle="from-center"
+              videoSrc="https://www.youtube.com/embed/MQoN6O4hhh4"
             >
-              <Play className="h-4 w-4 fill-current mr-2" />
-              <span>{t('watchDemo')}</span>
-            </button>
+              <div className="flex cursor-pointer items-center justify-center space-x-2 rounded-full border border-primary-600 bg-white px-8 py-4 text-base font-semibold text-primary-600 transition-colors hover:bg-primary-500/10 h-[60px]">
+                <Play className="h-4 w-4 fill-current mr-2" />
+                <span>{t('watchDemo')}</span>
+              </div>
+            </HeroVideoDialog>
           </div>
         </div>
 

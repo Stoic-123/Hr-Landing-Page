@@ -151,7 +151,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <button
-                onClick={openModal}
+                onClick={() => openModal({ planName: plan.name })}
                 className={`w-full rounded-full py-3 text-sm font-semibold transition-colors ${
                   plan.highlight
                     ? "bg-primary-600 text-white hover:bg-primary-700"

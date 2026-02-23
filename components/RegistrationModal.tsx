@@ -3,15 +3,25 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { X, CheckCircle2, ArrowRight } from "lucide-react";
+import { X, CheckCircle2, ArrowRight, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { useModal } from "@/context/ModalContext";
 import { cn } from "@/lib/utils";
 
 export default function RegistrationModal() {
-  const { isOpen, closeModal } = useModal();
+  const { isOpen, data, closeModal } = useModal();
   const t = useTranslations("RegistrationModal");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+
+  // Sync plan data when modal opens
+  React.useEffect(() => {
+    if (isOpen && data?.planName) {
+      setSelectedPlan(data.planName);
+    }
+  }, [isOpen, data]);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -58,17 +68,77 @@ export default function RegistrationModal() {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validate()) return;
 
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
+    setSubmitError("");
+
+    try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS configuration is missing");
+      }
+
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        reply_to: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        title: selectedPlan ? `Registration for ${selectedPlan} Plan` : "Registration / Demo Request",
+        message: `New registration from ${formData.name} (${formData.company}). 
+Phone: ${formData.phone}
+Plan Selected: ${selectedPlan || "General / Demo Request"}`
+      };
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      // Send Telegram Notification
+      const telegramMessage = `
+🌟 <b>NEW REGISTRATION</b> 🌟
+────────────────────────
+👤 <b>CONTACT DETAILS</b>
+• <b>Name:</b> <code>${formData.name}</code>
+• <b>Email:</b> <code>${formData.email}</code>
+• <b>Phone:</b> <code>${formData.phone}</code>
+
+🏢 <b>COMPANY INFO</b>
+• <b>Name:</b> <code>${formData.company}</code>${selectedPlan ? `\n• <b>Plan:</b> 🏷️ <b>${selectedPlan}</b>` : ""}
+
+────────────────────────
+💬 <b>DIRECT ACTION</b>
+👉 <a href="https://t.me/+${formData.phone.replace(/[^\d]/g, "")}"><b>Chat with Customer on Telegram</b></a>
+────────────────────────`;
+
+      try {
+        await fetch("/api/telegram", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: telegramMessage }),
+        });
+      } catch (tgError) {
+        console.error("Telegram Notification Error:", tgError);
+        // We don't fail the submission if only Telegram fails
+      }
+
       setIsSubmitted(true);
-    }, 1500);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setSubmitError(t("error.submitFailed"));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleClose = () => {
@@ -76,6 +146,8 @@ export default function RegistrationModal() {
     // Reset state after modal is closed
     setTimeout(() => {
       setIsSubmitted(false);
+      setSubmitError("");
+      setSelectedPlan(null);
       setFormData({ name: "", email: "", phone: "", company: "" });
       setErrors({ name: "", email: "", phone: "", company: "" });
     }, 300);
@@ -238,6 +310,13 @@ export default function RegistrationModal() {
                         )}
                       </div>
 
+                      {submitError && (
+                        <div className="flex items-center space-x-2 p-4 rounded-xl bg-red-50 text-red-600 text-sm font-medium border border-red-100">
+                          <AlertCircle className="h-4 w-4" />
+                          <span>{submitError}</span>
+                        </div>
+                      )}
+
                       <button
                         disabled={isLoading}
                         type="submit"
@@ -257,24 +336,38 @@ export default function RegistrationModal() {
                     key="success"
                     initial={{ opacity: 0, scale: 0.9, y: 10 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    className="text-center py-8"
+                    className="text-center py-4 flex flex-col items-center"
                   >
-                    <div className="flex justify-center mb-8">
-                      <div className="w-24 h-24 rounded-full bg-primary-500/10 flex items-center justify-center border border-primary-500/20">
+                    <div className="relative mb-8">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", damping: 12, stiffness: 200, delay: 0.2 }}
+                        className="w-24 h-24 rounded-full bg-primary-500/10 flex items-center justify-center border border-primary-500/20 relative z-10"
+                      >
                         <CheckCircle2 className="h-12 w-12 text-primary-600" />
-                      </div>
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1.5 }}
+                        transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
+                        className="absolute inset-0 rounded-full bg-primary-500/5 blur-xl -z-0"
+                      />
                     </div>
-                    <h2 className="text-3xl font-bold text-foreground mb-4 bg-gradient-to-br from-zinc-900 to-zinc-600 bg-clip-text">
+                    
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
                       {t("successTitle")}
                     </h2>
-                    <p className="text-zinc-600 mb-10 max-w-sm mx-auto font-medium">
+                    <p className="text-slate-600 mb-10 max-w-sm mx-auto font-medium text-lg leading-relaxed px-6">
                       {t("successMessage")}
                     </p>
+                    
                     <button
                       onClick={handleClose}
-                      className="w-full rounded-xl sm:rounded-2xl bg-zinc-900 py-4 sm:py-5 text-sm font-bold text-white hover:bg-zinc-800 transition-all active:scale-[0.98] shadow-xl shadow-zinc-900/10"
+                      className="w-full max-w-xs rounded-2xl bg-zinc-900 py-4 sm:py-5 text-sm font-bold text-white hover:bg-zinc-800 transition-all active:scale-[0.98] shadow-xl shadow-zinc-900/10 flex items-center justify-center group"
                     >
-                      {t("close")}
+                      <span>{t("close")}</span>
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </motion.div>
                 )}

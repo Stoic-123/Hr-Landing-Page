@@ -15,7 +15,7 @@
     "morph1": "Future",
     "morph2": "Success",
     "morph3": "Growth",
-    "description": "Streamline payroll, recruitment, and employee engagement with our AI-powered platform designed for the next generation of teams.",
+    "description": "Simplify HR operations and enhance employee experiences with an all-in-one platform built for modern and growing teams.",
     "startTrial": "Start Free Trial",
     "watchDemo": "Watch Demo"
   },
@@ -130,7 +130,7 @@
     "subtitle": "Fill out the form below to get started or request a demo. Our team will contact you shortly.",
     "name": "Full Name",
     "email": "Work Email",
-    "phone": "Phone Number",
+    "phone": "Telegram Phone Number",
     "company": "Company Name",
     "submit": "Request Demo / Get Started",
     "submitting": "Processing...",
@@ -143,6 +143,9 @@
       "emailInvalid": "Please enter a valid work email",
       "phoneRequired": "Phone number is required",
       "companyRequired": "Company name is required"
+    },
+    "error": {
+      "submitFailed": "Failed to submit request. Please try again later."
     }
   },
   "TrustedBy": {
@@ -157,7 +160,10 @@
       "email": "Email",
       "message": "Message",
       "send": "Send Message",
-      "sending": "Sending..."
+      "sending": "Sending...",
+      "successTitle": "Message Sent!",
+      "successSubtitle": "Thank you for reaching out. We'll get back to you shortly.",
+      "error": "Failed to send message. Please try again later."
     },
     "info": {
       "email": "Email Us",
