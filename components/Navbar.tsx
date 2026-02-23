@@ -30,8 +30,8 @@ export default function Navbar() {
     { name: t('howItWorks'), id: 'how-it-works' },
     { name: t('pricing'), id: 'pricing' },
     { name: t('testimonials'), id: 'testimonials' },
+    { name: t('contact'), id: 'contact' },
     { name: t('faq'), id: 'faq' },
-    { name: t('contact'), id: 'contact' }
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {

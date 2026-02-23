@@ -21,8 +21,8 @@
   },
   "Features": {
     "badge": "Why Choose Us",
-    "title": "Everything you need to manage your team",
-    "description": "Our platform brings all your HR needs into one cohesive ecosystem, simplifying complex processes so you can focus on people.",
+    "title": "NSM HR has everything you need to manage your team",
+    "description": "Scale your team without the chaos. Our platform brings every HR process together so your business never slows down.",
     "smartRecruitment": "Smart Recruitment",
     "smartRecruitmentDesc": "Automate candidate sourcing and screening with our AI-driven recruitment engine.",
     "realTimeAnalytics": "Real-time Analytics",
@@ -146,7 +146,7 @@
     }
   },
   "TrustedBy": {
-    "title": "Trusted by innovative companies worldwide"
+    "title": "Trusted by many innovative companies."
   },
   "Contact": {
     "badge": "Get in Touch",

@@ -34,6 +34,7 @@ import Footer from "@/components/Footer";
 import MeshBackground from "@/components/MeshBackground";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageTransition from "@/components/PageTransition";
+import ScrollToTop from "@/components/ScrollToTop";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ModalProvider } from "@/context/ModalContext";
@@ -69,6 +70,7 @@ export default async function RootLayout({
                   <main className="flex-grow relative z-10">{children}</main>
                 </PageTransition>
                 <Footer />
+                <ScrollToTop />
               </SmoothScroll>
               <RegistrationModal />
             </ModalProvider>
