@@ -89,7 +89,7 @@ export function HeroVideoDialog({
   const modalContent = (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-10">
+        <div className="fixed inset-0 z-9999 flex items-center justify-center p-4 md:p-10">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -100,7 +100,7 @@ export function HeroVideoDialog({
           <motion.div
             {...selectedVariant}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="relative w-full max-w-6xl aspect-video mx-auto z-[10000]"
+            className="relative w-full max-w-6xl aspect-video mx-auto z-10000"
           >
             <button
               onClick={() => setIsOpen(false)}
