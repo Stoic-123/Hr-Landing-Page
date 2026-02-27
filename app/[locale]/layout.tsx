@@ -67,7 +67,7 @@ export default async function RootLayout({
                 <MeshBackground />
                 <Navbar />
                 <PageTransition>
-                  <main className="flex-grow relative z-10">{children}</main>
+                  <main className="grow relative z-10">{children}</main>
                 </PageTransition>
                 <Footer />
                 <ScrollToTop />
