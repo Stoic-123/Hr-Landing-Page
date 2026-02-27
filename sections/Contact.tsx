@@ -135,7 +135,7 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="contact-info-item flex items-start space-x-4 p-6 rounded-2xl bg-white border border-zinc-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-600 flex-shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-600 shrink-0">
                 <Mail className="w-6 h-6" />
               </div>
               <div>
@@ -147,7 +147,7 @@ export default function Contact() {
             </div>
 
             <div className="contact-info-item flex items-start space-x-4 p-6 rounded-2xl bg-white border border-zinc-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-secondary-50 flex items-center justify-center text-secondary-600 flex-shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-secondary-50 flex items-center justify-center text-secondary-600 shrink-0">
                 <Phone className="w-6 h-6" />
               </div>
               <div>
@@ -159,7 +159,7 @@ export default function Contact() {
             </div>
 
             <div className="contact-info-item flex items-start space-x-4 p-6 rounded-2xl bg-white border border-zinc-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-600 flex-shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-600 shrink-0">
                 <MapPin className="w-6 h-6" />
               </div>
               <div>

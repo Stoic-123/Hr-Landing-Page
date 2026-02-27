@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-500: #FDB360;
+  --color-primary-500: #fdb360;
   --color-primary-600: #e39c4a;
-  --color-secondary-600: #11689D;
+  --color-secondary-600: #11689d;
   --color-secondary-700: #0d537e;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -11,7 +11,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #11689D;
+  --foreground: #11689d;
 }
 
 body {
@@ -55,4 +55,10 @@ html.lenis body {
 
 .perspective-1000 {
   perspective: 1000px;
+}
+@layer base {
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
 }

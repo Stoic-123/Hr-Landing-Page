@@ -26,8 +26,8 @@ export default function TrustedBy() {
       
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         {/* Gradient Masks */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-background to-transparent md:w-48"></div>
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-background to-transparent md:w-48"></div>
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-background to-transparent md:w-48"></div>
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-background to-transparent md:w-48"></div>
 
         <div className="flex w-full">
           <motion.div

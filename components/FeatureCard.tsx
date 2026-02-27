@@ -31,7 +31,7 @@ export default function FeatureCard({
       <p className="text-zinc-600">{description}</p>
       
       {/* Decorative gradient blob */}
-      <div className="absolute -right-4 -bottom-4 h-24 w-24 rounded-full bg-gradient-to-br from-primary-500/20 to-secondary-500/20 blur-2xl transition-all group-hover:scale-150" />
+      <div className="absolute -right-4 -bottom-4 h-24 w-24 rounded-full bg-linear-to-br from-primary-500/20 to-secondary-500/20 blur-2xl transition-all group-hover:scale-150" />
     </motion.div>
   );
 }

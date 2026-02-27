@@ -100,7 +100,7 @@ export default function MobileApp() {
                 },
               ].map((feature) => (
                 <div key={feature.id} className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 flex items-center justify-center p-1 border border-primary-500/20 rounded-full">
+                  <div className="shrink-0 flex items-center justify-center p-1 border border-primary-500/20 rounded-full">
                     {feature.icon}
                   </div>
                   <span className="text-base font-medium text-zinc-700">
@@ -118,7 +118,7 @@ export default function MobileApp() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-black text-white px-4 py-2 rounded-xl transition-all hover:bg-primary-500 shadow-lg shadow-primary-600/20 group w-[180px] h-[58px]"
               >
-                <div className="mr-3 transform  group-hover:scale-110 transition-transform flex-shrink-0">
+                <div className="mr-3 transform  group-hover:scale-110 transition-transform shrink-0">
                   <img 
                     src="/appstoreIcon.png" 
                     alt="App Store" 
@@ -136,7 +136,7 @@ export default function MobileApp() {
                 href="#"
                 className="inline-flex items-center bg-black text-white px-4 py-2 rounded-xl transition-all hover:bg-primary-500 shadow-lg shadow-primary-600/20 group w-[180px] h-[58px]"
               >
-                <div className="mr-3 transform group-hover:scale-110 transition-transform flex-shrink-0">
+                <div className="mr-3 transform group-hover:scale-110 transition-transform shrink-0">
                   <img 
                     src="/playstoreIcon.png" 
                     alt="Google Play" 

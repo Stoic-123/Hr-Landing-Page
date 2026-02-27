@@ -124,7 +124,7 @@ export default function Pricing() {
               }`}
             >
               {plan.highlight && (
-                <div className="absolute top-0 right-0 -mt-4 -mr-2 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-4 py-1 text-[10px] font-bold text-white uppercase tracking-wider shadow-lg z-20">
+                <div className="absolute top-0 right-0 -mt-4 -mr-2 rounded-full bg-linear-to-r from-primary-500 to-primary-600 px-4 py-1 text-[10px] font-bold text-white uppercase tracking-wider shadow-lg z-20">
                   {t('mostPopular')}
                 </div>
               )}

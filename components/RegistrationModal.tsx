@@ -165,7 +165,7 @@ Plan Selected: ${selectedPlan || "General / Demo Request"}`
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -198,10 +198,10 @@ Plan Selected: ${selectedPlan || "General / Demo Request"}`
                 ease: "easeIn"
               }
             }}
-            className="relative w-full max-w-2xl overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)]"
+            className="relative w-full max-w-2xl overflow-hidden rounded-4xl sm:rounded-[2.5rem] bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)]"
           >
             {/* Inner Glow / Lighting Effect */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/50 to-transparent" />
             
             {/* Close Button */}
             <button
@@ -222,7 +222,7 @@ Plan Selected: ${selectedPlan || "General / Demo Request"}`
                     transition={{ duration: 0.3 }}
                   >
                     <div className="mb-8">
-                      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3 bg-gradient-to-br from-zinc-900 to-zinc-600 bg-clip-text">
+                      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3 bg-linear-to-br from-zinc-900 to-zinc-600 bg-clip-text">
                         {t("title")}
                       </h2>
                       <p className="text-zinc-600 leading-relaxed font-medium">
@@ -325,7 +325,7 @@ Plan Selected: ${selectedPlan || "General / Demo Request"}`
                           isLoading && "opacity-70 cursor-not-allowed"
                         )}
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 ease-in-out" />
+                        <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 ease-in-out" />
                         <span className="relative z-10">{isLoading ? t("submitting") : t("submit")}</span>
                         {!isLoading && <ArrowRight className="h-4 w-4 relative z-10 transition-transform group-hover/btn:translate-x-1" />}
                       </button>
@@ -351,7 +351,7 @@ Plan Selected: ${selectedPlan || "General / Demo Request"}`
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1.5 }}
                         transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-                        className="absolute inset-0 rounded-full bg-primary-500/5 blur-xl -z-0"
+                        className="absolute inset-0 rounded-full bg-primary-500/5 blur-xl z-0"
                       />
                     </div>
                     
